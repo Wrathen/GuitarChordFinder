@@ -25,11 +25,14 @@ Basically, if you are new to JS, you could copy-paste everything inside main.js 
 
 <h1>Beware:</h1>
 
-- Do not judge the code performance. It executes in milliseconds and optimization is not (and never will be) needed in such small computations.
+- Uses standard (EADGBE) tuning by default. 
 - Chords are calculated up to the 12th fret. You can change the code for further considerations.
 - Chords are calculated for 6-string guitars.
+- Do not judge the code quality. It executes in milliseconds and optimization is not (and never will be) needed in such small computations. I just wanted to make the product, not quality code.
 - Chords' notation is different than tabs online. The first index gives you the thickest E (the top string on your guitar).
-- On any chord you get by using these functions will always be a chord that uses all the 6 strings. There is no 'x's in the codebase, there is no skipping a string entirely. For example, you'd expect on an input "D" minor chord to give you (x, x, x, 2, 3, 1), which is not the case here. You'll get (5, 5, 7, 7, 6, 5) instead. Which I often use the barro-version more than the usual one, personally.
+- On any chord you get by using these functions will always be a chord that uses all the 6 strings. There is no 'x's in the codebase, there is no skipping a string entirely. 
+
+  For example, you'd expect on an input "D minor" chord to give you (x, x, x, 2, 3, 1), which is not the case here. You'll get (5, 5, 7, 7, 6, 5) instead. Which I often use the barro-version more than the usual one, personally.
 - More signatures can be easily added into the code. </br>For example for sus4 signatures, you'd add the function `function GetChordSignatureSus4(rootNote) { return [rootNote, GetNoteOffsetted(rootNote, 5), GetNoteOffsetted(rootNote, 7)]; }` and use it in the function `FindAllChordCombinationsOfSignature(chordSignature)`.
 ![image](https://github.com/Wrathen/GuitarChordFinder/assets/36766122/ab11d69b-43fd-484d-acb7-ff3f7105f026)
 
